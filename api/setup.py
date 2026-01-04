@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import settings
 
 
-async def handler(request):
+async def async_handler(request):
     """
     Set up the Telegram webhook.
 
@@ -63,7 +63,7 @@ async def handler(request):
 
 
 # Vercel entry point
-def vercel_handler(request):
+def handler(request):
     """Synchronous wrapper for Vercel."""
     import asyncio
-    return asyncio.run(handler(request))
+    return asyncio.run(async_handler(request))

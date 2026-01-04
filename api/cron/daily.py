@@ -16,7 +16,7 @@ from database.repositories.user_repository import UserRepository
 from database.repositories.task_repository import TaskRepository
 
 
-async def handler(request):
+async def async_handler(request):
     """Send daily summaries to all active users."""
     try:
         user_repo = UserRepository()
@@ -83,7 +83,7 @@ async def handler(request):
 
 
 # Vercel entry point
-def vercel_handler(request):
+def handler(request):
     """Synchronous wrapper for Vercel."""
     import asyncio
-    return asyncio.run(handler(request))
+    return asyncio.run(async_handler(request))

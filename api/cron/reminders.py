@@ -16,7 +16,7 @@ from database.repositories.reminder_repository import ReminderRepository
 from database.repositories.task_repository import TaskRepository
 
 
-async def handler(request):
+async def async_handler(request):
     """Check and send pending reminders."""
     try:
         # Verify cron secret (optional security)
@@ -79,7 +79,7 @@ async def handler(request):
 
 
 # Vercel entry point
-def vercel_handler(request):
+def handler(request):
     """Synchronous wrapper for Vercel."""
     import asyncio
-    return asyncio.run(handler(request))
+    return asyncio.run(async_handler(request))

@@ -67,7 +67,7 @@ def get_application():
     return application
 
 
-async def handler(request):
+async def async_handler(request):
     """
     Vercel serverless function handler.
 
@@ -114,7 +114,7 @@ async def handler(request):
 
 
 # Vercel entry point
-def vercel_handler(request):
+def handler(request):
     """Synchronous wrapper for Vercel."""
     import asyncio
-    return asyncio.run(handler(request))
+    return asyncio.run(async_handler(request))
