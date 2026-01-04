@@ -16,10 +16,6 @@
     {
       "path": "/api/cron/daily",
       "schedule": "0 7 * * *"
-    },
-    {
-      "path": "/api/cron/reminders",
-      "schedule": "*/15 * * * *"
     }
   ]
 }
