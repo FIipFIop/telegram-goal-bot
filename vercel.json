@@ -12,14 +12,6 @@
       "dest": "/api/$1"
     }
   ],
-  "env": {
-    "TELEGRAM_BOT_TOKEN": "@telegram_bot_token",
-    "SUPABASE_URL": "@supabase_url",
-    "SUPABASE_KEY": "@supabase_key",
-    "OPENROUTER_API_KEY": "@openrouter_api_key",
-    "OPENROUTER_MODEL": "@openrouter_model",
-    "LOG_LEVEL": "@log_level"
-  },
   "crons": [
     {
       "path": "/api/cron/daily",
