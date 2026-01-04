@@ -22,16 +22,8 @@
   },
   "crons": [
     {
-      "path": "/api/cron/reminders",
-      "schedule": "* * * * *"
-    },
-    {
       "path": "/api/cron/daily",
       "schedule": "0 7 * * *"
-    },
-    {
-      "path": "/api/cron/weekly",
-      "schedule": "0 20 * * 0"
     }
   ]
 }
